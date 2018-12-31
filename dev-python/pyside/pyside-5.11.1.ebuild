@@ -171,7 +171,7 @@ src_test() {
 src_install() {
 	installation() {
 		cmake-utils_src_install
-		mv "${ED}"usr/$(get_libdir)/pkgconfig/${PN}2{,-${EPYTHON}}.pc || die
+		mv "${ED%/}"usr/$(get_libdir)/pkgconfig/${PN}2{,-${EPYTHON}}.pc || die
 	}
 	python_foreach_impl installation
 }
